@@ -1,0 +1,93 @@
+{
+  "model_type": "RandomForestClassifier",
+  "n_estimators": 100,
+  "max_depth": 10,
+  "classes": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "feature_names": [
+    "total_rules",
+    "allow_count",
+    "block_count",
+    "unrestricted_source_count",
+    "unrestricted_destination_count",
+    "high_risk_port_count",
+    "high_risk_allow_count",
+    "shadowed_rule_count",
+    "redundant_rule_count",
+    "contradictory_rule_count",
+    "allow_block_ratio",
+    "error_count",
+    "warning_count"
+  ],
+  "training_samples": 3200,
+  "test_samples": 800,
+  "accuracy": 0.9912,
+  "classification_report": {
+    "Low": {
+      "precision": 1.0,
+      "recall": 0.9970238095238095,
+      "f1-score": 0.9985096870342772,
+      "support": 336.0
+    },
+    "Medium": {
+      "precision": 0.9692982456140351,
+      "recall": 1.0,
+      "f1-score": 0.9844097995545658,
+      "support": 221.0
+    },
+    "High": {
+      "precision": 1.0,
+      "recall": 0.9753086419753086,
+      "f1-score": 0.9875,
+      "support": 243.0
+    },
+    "accuracy": 0.99125,
+    "macro avg": {
+      "precision": 0.9897660818713451,
+      "recall": 0.9907774838330394,
+      "f1-score": 0.9901398288629476,
+      "support": 800.0
+    },
+    "weighted avg": {
+      "precision": 0.9915186403508772,
+      "recall": 0.99125,
+      "f1-score": 0.9912704006813452,
+      "support": 800.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      335,
+      1,
+      0
+    ],
+    [
+      0,
+      221,
+      0
+    ],
+    [
+      0,
+      6,
+      237
+    ]
+  ],
+  "feature_importances": {
+    "total_rules": 0.0286,
+    "allow_count": 0.0324,
+    "block_count": 0.0845,
+    "unrestricted_source_count": 0.1582,
+    "unrestricted_destination_count": 0.0697,
+    "high_risk_port_count": 0.1414,
+    "high_risk_allow_count": 0.2931,
+    "shadowed_rule_count": 0.0301,
+    "redundant_rule_count": 0.0016,
+    "contradictory_rule_count": 0.0408,
+    "allow_block_ratio": 0.0377,
+    "error_count": 0.0419,
+    "warning_count": 0.0401
+  }
+}

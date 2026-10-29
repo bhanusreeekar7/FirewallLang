@@ -221,7 +221,6 @@ compiler/
 ├── run_project.py               # Master 1-click launcher (Web, CLI, Test)
 ├── cli.py                       # Standalone terminal CLI entrypoint
 ├── README.md                    # Project documentation
-├── FACULTY_PRESENTATION_SCRIPT.md # 4-person presentation script & viva guide
 │
 ├── backend/                     # FastAPI Backend & Compiler Core
 │   ├── app/

@@ -1,4 +1,4 @@
-# 🔥 FirewallLang
+#  FirewallLang
 
 > **A compiler-based Domain Specific Language (DSL) for declaring firewall policies, catching configuration bugs before they hit production, and evaluating security risk using Machine Learning.**
 
@@ -6,7 +6,7 @@ Built for our **Compiler Design Lab**, FirewallLang treats firewall configuratio
 
 ---
 
-## 💡 Why Did We Build This?
+##  Why Did We Build This?
 
 If you have ever had to configure Linux network security manually, you already know the pain:
 

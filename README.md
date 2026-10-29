@@ -43,7 +43,6 @@ firewall "ProductionEdge" {
 - ⚡ **Intermediate Optimizer (`-O1`):** Features a **Dead Code Elimination (DCE)** pass that removes unreachable rules, compacting rule chains for faster kernel packet evaluation.
 - 🎯 **Multi-Target Code Generation:** Compiles down to **Linux `iptables`**, modern **`nftables`**, and **JSON IR** for CI/CD pipelines.
 - 🤖 **ML-Powered Risk Engine:** A trained Random Forest classifier (**99.12% accuracy**) that analyzes 13 structural features to give an instant security risk rating (Low, Medium, High).
-- 🗺️ **Attack Surface Topology:** Maps out inter-zone communication patterns and flags critical ingress paths directly in the UI.
 - 🖥️ **Full-Stack Web IDE + Standalone CLI:** Built with a minimal pure-black React interface (with live editor and Auto-Fix) alongside a zero-dependency terminal CLI.
 
 ---
@@ -122,7 +121,7 @@ Source Code (.fwl)
  5. Code Generator (codegen.py)
        │  Emits iptables / nftables / JSON IR
        ▼
- 6. ML & Topology Engine (ml_model.py & topology.py)
+ 6. ML Risk Engine (ml_model.py)
        │  13-Feature Vector -> Random Forest Risk Rating
 ```
 
@@ -241,9 +240,8 @@ compiler/
 │   │   │   ├── ml_model.py      # Random Forest inference engine
 │   │   │   ├── generate_dataset.py # 4,000 policy dataset generator
 │   │   │   ├── train_model.py   # Training script & evaluation metrics
-│   │   │   ├── topology.py      # Zone graph & attack surface mapper
 │   │   │   └── models/          # Saved .pkl model & metadata
-│   └── tests/                   # 32 Automated unit & integration tests
+│   └── tests/                   # 31 Automated unit & integration tests
 │
 └── frontend/                    # React 19 + TypeScript Web Interface
     ├── src/

@@ -112,7 +112,6 @@ A copy has also been saved to your project folder at [`FACULTY_PRESENTATION_SCRI
 > *As shown in our live dashboard:*
 > - *The model outputs a full **probability distribution** across risk tiers.*
 > - *It uses **Gini Feature Attribution** to explain exactly *why* a policy is risky—for instance, pointing out that open RDP (port 3389) or Telnet (port 23) from wildcard `any` is driving up the risk score.*
-> - *Our dashboard also builds an interactive **Network Zone Topology Map** to visually expose cross-zone lateral movement.*
 > - *Finally, our **Auto-Fix** feature allows administrators to click one button to automatically prune dead rules from their source code.*
 >
 > *This completes our end-to-end compiler demonstration. We are now happy to answer any questions from the faculty. Thank you."*

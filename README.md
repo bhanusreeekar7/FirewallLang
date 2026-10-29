@@ -36,18 +36,18 @@ firewall "ProductionEdge" {
 
 ---
 
-## ✨ Key Features at a Glance
+##  Key Features at a Glance
 
-- 🔍 **Strict Front-End Compiler:** Written from scratch using recursive-descent parsing with exact line and column error reporting.
-- 🛡️ **Static Semantic Analysis:** Automatically flags **shadowed rules** (dead code), **redundancies**, **contradictions**, and invalid port ranges (outside `1-65535`).
-- ⚡ **Intermediate Optimizer (`-O1`):** Features a **Dead Code Elimination (DCE)** pass that removes unreachable rules, compacting rule chains for faster kernel packet evaluation.
-- 🎯 **Multi-Target Code Generation:** Compiles down to **Linux `iptables`**, modern **`nftables`**, and **JSON IR** for CI/CD pipelines.
-- 🤖 **ML-Powered Risk Engine:** A trained Random Forest classifier (**99.12% accuracy**) that analyzes 13 structural features to give an instant security risk rating (Low, Medium, High).
-- 🖥️ **Full-Stack Web IDE + Standalone CLI:** Built with a minimal pure-black React interface (with live editor and Auto-Fix) alongside a zero-dependency terminal CLI.
+-  **Strict Front-End Compiler:** Written from scratch using recursive-descent parsing with exact line and column error reporting.
+-  **Static Semantic Analysis:** Automatically flags **shadowed rules** (dead code), **redundancies**, **contradictions**, and invalid port ranges (outside `1-65535`).
+-  **Intermediate Optimizer (`-O1`):** Features a **Dead Code Elimination (DCE)** pass that removes unreachable rules, compacting rule chains for faster kernel packet evaluation.
+-  **Multi-Target Code Generation:** Compiles down to **Linux `iptables`**, modern **`nftables`**, and **JSON IR** for CI/CD pipelines.
+-  **ML-Powered Risk Engine:** A trained Random Forest classifier (**99.12% accuracy**) that analyzes 13 structural features to give an instant security risk rating (Low, Medium, High).
+-  **Full-Stack Web IDE + Standalone CLI:** Built with a minimal pure-black React interface (with live editor and Auto-Fix) alongside a zero-dependency terminal CLI.
 
 ---
 
-## 🚀 Quickstart Guide
+##  Quickstart Guide
 
 Get the entire project running in under a minute!
 
@@ -98,7 +98,7 @@ python run_project.py --test
 
 ---
 
-## 🏗️ How It Works (The 6 Pipeline Stages)
+##  How It Works (The 6 Pipeline Stages)
 
 FirewallLang follows classic compiler architecture principles taught in Compiler Design:
 
@@ -152,7 +152,7 @@ Extracts a **13-dimensional feature vector** from the AST (measuring wildcards, 
 
 ---
 
-## 🧠 The Machine Learning Subsystem
+## The Machine Learning Subsystem
 
 ### Why Machine Learning?
 Traditional static linters only check binary logic (e.g., *"Is this rule unreachable?"*). But a firewall policy can be 100% syntactically valid and still be an **operational disaster** (e.g., leaving Telnet port 23 open to the entire world). Our ML model acts as an automated security auditor trained to spot dangerous patterns.
@@ -214,7 +214,7 @@ firewall "CorporateGateway" {
 
 ---
 
-## 📂 Project Directory Structure
+##  Project Directory Structure
 
 ```text
 compiler/

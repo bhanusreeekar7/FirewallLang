@@ -19,7 +19,6 @@ from app.compiler.codegen import CodeGenerator
 from app.compiler.semantic import SemanticAnalyzer
 from app.analysis.risk import RiskAnalyzer
 from app.analysis.ml_model import ml_classifier
-from app.analysis.topology import TopologyAnalyzer
 
 router = APIRouter()
 
@@ -99,9 +98,6 @@ async def analyze_code(req: SourceCodeRequest):
     # Supplementary ML classification
     ml_res = ml_classifier.predict(risk_res.features)
 
-    # Network Topology and Attack Surface Analysis
-    topology_res = TopologyAnalyzer.analyze(result.ast)
-
     has_errors = not result.success
 
     return AnalyzeResponse(
@@ -115,7 +111,6 @@ async def analyze_code(req: SourceCodeRequest):
         structured_commands=result.structured_commands,
         nftables_code=result.nftables_code,
         optimization=result.optimization_report,
-        topology=topology_res,
         risk=RiskAssessmentItem(
             score=risk_res.score,
             level=risk_res.level,

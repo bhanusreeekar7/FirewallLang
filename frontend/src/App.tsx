@@ -634,59 +634,7 @@ export default function App() {
                 )}
               </div>
 
-              {/* 6. Network Topology View */}
-              {results.topology && results.topology.nodes.length > 0 && (
-                <div className="section-box">
-                  <div className="section-head">
-                    <span className="section-heading">Network Zone Topology &amp; Attack Surface</span>
-                    <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
-                      {results.topology.nodes.length} Zones | {results.topology.edges.length} Active Paths
-                    </span>
-                  </div>
-
-                  {results.topology.high_risk_paths.length > 0 && (
-                    <div
-                      style={{
-                        padding: "8px 12px",
-                        background: "var(--error-bg)",
-                        border: "1px solid var(--error-border)",
-                        borderRadius: "4px",
-                        marginBottom: 10,
-                        fontSize: 12,
-                      }}
-                    >
-                      <strong style={{ color: "var(--error-color)" }}>High-Risk Attack Surface Exposures:</strong>
-                      <ul style={{ paddingLeft: 18, marginTop: 4 }}>
-                        {results.topology.high_risk_paths.map((hrp, i) => (
-                          <li key={i} style={{ color: "#fca5a5" }}>
-                            <strong>{hrp.path}</strong> ({hrp.protocol}:{hrp.port}) &mdash; {hrp.reason}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-                    {results.topology.nodes.map((node) => (
-                      <div
-                        key={node.id}
-                        style={{
-                          padding: "4px 8px",
-                          border: "1px solid var(--border-color)",
-                          borderRadius: "4px",
-                          background: node.is_perimeter ? "var(--info-bg)" : "var(--surface-secondary)",
-                          fontSize: 11,
-                        }}
-                      >
-                        <strong style={{ color: node.is_perimeter ? "var(--info-color)" : "inherit" }}>{node.label}</strong>
-                        <span style={{ color: "var(--text-muted)", marginLeft: 4 }}>({node.cidr})</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* 7. AST View (Collapsible) */}
+              {/* 6. AST View (Collapsible) */}
               {results.ast && (
                 <details>
                   <summary>Abstract Syntax Tree (AST JSON)</summary>
@@ -698,7 +646,7 @@ export default function App() {
                 </details>
               )}
 
-              {/* 8. Tokens View (Collapsible) */}
+              {/* 7. Tokens View (Collapsible) */}
               {results.tokens.length > 0 && (
                 <details>
                   <summary>Tokens Stream ({results.tokens.length} Tokens)</summary>

@@ -12,7 +12,6 @@ if str(BACKEND_DIR) not in sys.path:
 from app.compiler.pipeline import CompilerPipeline
 from app.analysis.risk import RiskAnalyzer
 from app.analysis.ml_model import ml_classifier
-from app.analysis.topology import TopologyAnalyzer
 
 DEMO_SOURCE = """firewall "EnterpriseEdgeGateway" {
     # 1. Standard hardened web rules
@@ -140,7 +139,6 @@ def run_cli():
     # 2. Risk & ML Assessment
     risk_res = RiskAnalyzer.evaluate(res.ast, res.diagnostics)
     ml_out = ml_classifier.predict(risk_res.features)
-    topology = TopologyAnalyzer.analyze(res.ast)
 
     # 3. Output Reporting
     print("\n[+] 1. FRONT-END SCANNING & AST")
@@ -182,13 +180,7 @@ def run_cli():
             for tf in ml_out["top_features"]:
                 print(f"        * {tf['feature']:<28} (Value: {tf['value']}, Weight: {tf['importance_weight']:.1%})")
 
-    print("\n[+] 5. NETWORK TOPOLOGY & ATTACK SURFACE")
-    print(f"    - Active Zones: {', '.join([n['id'].upper() for n in topology['nodes']])}")
-    print(f"    - High-Risk Ingress Paths: {len(topology['high_risk_paths'])}")
-    for hrp in topology["high_risk_paths"]:
-        print(f"        * {hrp['path']} on {hrp['protocol']}:{hrp['port']} ({hrp['reason']})")
-
-    print(f"\n[+] 6. GENERATED FIREWALL CODE (TARGET: {args.target.upper()})")
+    print(f"\n[+] 5. GENERATED FIREWALL CODE (TARGET: {args.target.upper()})")
     print("-" * 80)
     print(res.generated_code or "(No code generated due to fatal compiler errors)")
     print("-" * 80)

@@ -71,6 +71,5 @@ class AnalyzeResponse(BaseModel):
     structured_commands: List[Dict[str, str]] = []
     nftables_code: Optional[str] = None
     optimization: Optional[Dict[str, Any]] = None
-    topology: Optional[Dict[str, Any]] = None
     risk: RiskAssessmentItem
     ml_assessment: Dict[str, Any]

@@ -52,40 +52,6 @@ export interface OptimizationReport {
   pruned_rules: PrunedRuleRecord[];
 }
 
-export interface TopologyNode {
-  id: string;
-  label: string;
-  cidr: string;
-  is_perimeter: boolean;
-}
-
-export interface TopologyEdge {
-  id: string;
-  rule_name: string;
-  source: string;
-  destination: string;
-  protocol: string;
-  port: number;
-  action: string;
-  is_critical: boolean;
-  service_description: string;
-}
-
-export interface HighRiskPath {
-  rule_name: string;
-  path: string;
-  port: number;
-  protocol: string;
-  reason: string;
-}
-
-export interface TopologyItem {
-  nodes: TopologyNode[];
-  edges: TopologyEdge[];
-  high_risk_paths: HighRiskPath[];
-  mermaid_diagram: string;
-}
-
 export interface TopFeatureItem {
   feature: string;
   value: number;
@@ -104,7 +70,6 @@ export interface AnalyzeResponse {
   structured_commands: StructuredCommand[];
   nftables_code?: string | null;
   optimization?: OptimizationReport | null;
-  topology?: TopologyItem | null;
   risk: RiskAssessmentItem;
   ml_assessment: {
     available: boolean;
